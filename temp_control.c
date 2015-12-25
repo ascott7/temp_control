@@ -128,11 +128,11 @@ int main(int argc, char* argv[])
     last_temp = 0;
     overshoot = 0;
 
-    // catch SIGINT (signal sent when pressing ctrl-c)
-    //signal(SIGINT, int_handler);
-    struct sigaction act;
-    act.sa_handler = int_handler;
-    sigaction(SIGINT, &act, NULL);
+    //catch SIGINT (signal sent when pressing ctrl-c)
+    signal(SIGINT, int_handler);
+//    struct sigaction act;
+//    act.sa_handler = int_handler;
+//    sigaction(SIGINT, &act, NULL);
 
     // continuously check on the temperature
     while(1) {
